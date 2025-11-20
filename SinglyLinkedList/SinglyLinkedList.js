@@ -9,16 +9,17 @@ class Node {
 
 export class SinglyLinkedList {
   constructor() {
-    this.head = null;  // første node
-    this._size = 0;    // holder styr på hvor mange noder der er
+    this.head = null;
+    this._size = 0; 
   }
 
   #checkIndex(index) {
     if (index < 0 || index >= this._size) {
-      throw new RangeError(`Index ${index} out of bounds (size: ${this._size})`);
+      throw new RangeError(
+        `Index ${index} out of bounds (size: ${this._size})`
+      );
     }
   }
-
 
   size() {
     return this._size;
@@ -213,13 +214,17 @@ export class SinglyLinkedList {
     }
   }
 
-
   printList() {
     let current = this.head;
     let index = 0;
     console.log("LinkedList:");
     while (current) {
-      console.log(`[${index}] data:`, current.data, "next:", current.next ? "Node" : "null");
+      console.log(
+        `[${index}] data:`,
+        current.data,
+        "next:",
+        current.next ? "Node" : "null"
+      );
       current = current.next;
       index++;
     }
