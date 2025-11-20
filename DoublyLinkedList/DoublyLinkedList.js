@@ -218,7 +218,30 @@ export class DoublyLinkedList {
     this.addLast(node.data);
   }
 
-  swap(nodeA, nodeB) {
+ swap(nodeA, nodeB) {
     if (!nodeA || !nodeB || nodeA === nodeB) return;
+
+    const tempAData = nodeA.data;
+    nodeA.data = nodeB.data;
+    nodeB.data = tempAData;
+  }
+
+  printList() {
+    let current = this.head;
+    let index = 0;
+    console.log("DoublyLinkedList:");
+    while (current) {
+      console.log(
+        `[${index}] data:`,
+        current.data,
+        "prev:",
+        current.prev ? "Node" : "null",
+        "next:",
+        current.next ? "Node" : "null"
+      );
+      current = current.next;
+      index++;
+    }
+    console.log("Size:", this._size);
   }
 }
