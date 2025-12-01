@@ -11,7 +11,6 @@ export function binarySearchRecursive(search, values, start, end, iterations = 0
     const mid = Math.floor((start + end) / 2);
     const current = values[mid];
 
-   
     if (current === search) {
         return {
             found: true,
